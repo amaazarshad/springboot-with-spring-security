@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: spring-img
+    container_name: spring-con
+    build: ./
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    network_mode: "host"
+
+  postgres:
+    image: postgres:alpine
+    container_name: postgres-con
+    environment:
+      POSTGRES_PASSWORD: pass1234
+      POSTGRES_USER: postgres
+      POSTGRES_DB: springdb
+    ports:
+      - 5432:5432
+    network_mode: "host"

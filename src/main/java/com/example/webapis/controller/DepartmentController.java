@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/v1/dept")
+@RequestMapping("api/dept")
 public class DepartmentController {
     private final DepartmentService departmentService;
 
