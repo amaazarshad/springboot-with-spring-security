@@ -1,5 +1,8 @@
-package com.example.webapis.security.auth;
+package com.example.webapis.service;
 
+import com.example.webapis.model.AuthenticationRequest;
+import com.example.webapis.model.AuthenticationResponse;
+import com.example.webapis.model.RegisterRequest;
 import com.example.webapis.security.config.JwtService;
 import com.example.webapis.security.token.Token;
 import com.example.webapis.security.token.TokenRepository;

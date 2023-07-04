@@ -1,5 +1,6 @@
 package com.example.webapis.security.config;
 
+import com.example.webapis.model.CustomError;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,13 +14,15 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
+import org.springframework.web.ErrorResponse;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 @EnableMethodSecurity
 public class SecurityConfiguration {
-
+//  private final CustomError customError;
   private final JwtAuthenticationFilter jwtAuthFilter;
   private final AuthenticationProvider authenticationProvider;
   private final LogoutHandler logoutHandler;
@@ -32,7 +35,6 @@ public class SecurityConfiguration {
             .authorizeHttpRequests()
             .requestMatchers("/api/auth/**")
             .permitAll()
-
 //             .requestMatchers(GET, "/api/admin/**").hasAuthority(ADMIN_READ.name())
 //             .requestMatchers(POST, "/api/admin/**").hasAuthority(ADMIN_CREATE.name())
 //             .requestMatchers(PUT, "/api/admin/**").hasAuthority(ADMIN_UPDATE.name())
@@ -53,4 +55,5 @@ public class SecurityConfiguration {
 
     return http.build();
   }
+
 }

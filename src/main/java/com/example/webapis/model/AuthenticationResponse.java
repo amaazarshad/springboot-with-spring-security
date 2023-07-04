@@ -1,4 +1,4 @@
-package com.example.webapis.security.auth;
+package com.example.webapis.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

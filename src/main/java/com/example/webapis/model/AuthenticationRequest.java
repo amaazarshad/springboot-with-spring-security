@@ -1,4 +1,4 @@
-package com.example.webapis.security.auth;
+package com.example.webapis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

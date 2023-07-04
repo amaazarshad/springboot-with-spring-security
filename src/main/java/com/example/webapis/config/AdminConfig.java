@@ -1,7 +1,7 @@
-package com.example.webapis.security.config;
+package com.example.webapis.config;
 
-import com.example.webapis.security.auth.AuthenticationService;
-import com.example.webapis.security.auth.RegisterRequest;
+import com.example.webapis.service.AuthenticationService;
+import com.example.webapis.model.RegisterRequest;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import static com.example.webapis.security.user.Role.ADMIN;
 
 @Configuration
-public class DataInitializer {
+public class AdminConfig {
     @Bean
     public CommandLineRunner commandLineRunner(AuthenticationService service) {
         return args -> {
